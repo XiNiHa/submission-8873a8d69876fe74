@@ -1,0 +1,20 @@
+{
+  "name": "submission-8873a8d69876fe74",
+  "namespace": false,
+  "reason": { "react-jsx": 3 },
+  "refmt": 3,
+  "bs-dependencies": ["@rescript/react", "rescript-relay"],
+  "ppx-flags": ["rescript-relay/ppx"],
+  "sources": [
+    { "dir": "src", "subdirs": true }
+  ],
+  "package-specs": {
+    "module": "es6",
+    "in-source": true
+  },
+  "suffix": ".mjs",
+  "warnings": {
+    "number": "-3",
+    "error": "+101+8"
+  }
+}

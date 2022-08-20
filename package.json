@@ -1,0 +1,32 @@
+{
+  "name": "submission-8873a8d69876fe74",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "res:build": "rescript build",
+    "relay": "rescript-relay-compiler"
+  },
+  "dependencies": {
+    "next": "12.2.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-relay": "^14.1.0",
+    "relay-runtime": "^14.1.0",
+    "rescript-relay": "1.0.0-beta.26"
+  },
+  "devDependencies": {
+    "@iconify-json/bi": "^1.1.6",
+    "@rescript/react": "^0.10.3",
+    "@unocss/reset": "^0.45.8",
+    "@unocss/webpack": "^0.45.8",
+    "eslint": "8.22.0",
+    "eslint-config-next": "12.2.5",
+    "rescript": "^9.1.4",
+    "unocss": "^0.45.8"
+  },
+  "packageManager": "yarn@3.2.2"
+}
