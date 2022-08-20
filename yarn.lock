@@ -359,6 +359,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ryyppy/rescript-promise@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "@ryyppy/rescript-promise@npm:2.1.0"
+  checksum: 47761ce48800e3e169d2fc6d0d381a15dd7a724e3d7a31297b5cffec30273d46f310dd9f96452fc027523950d4ab5c02a1a21d94bb06190070a30bcfc2783308
+  languageName: node
+  linkType: hard
+
 "@swc/helpers@npm:0.4.3":
   version: 0.4.3
   resolution: "@swc/helpers@npm:0.4.3"
@@ -3209,6 +3216,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rescript-relay@patch:rescript-relay@npm:1.0.0-beta.26#.yarn/patches/rescript-relay-npm-1.0.0-beta.26-4f125dc546.patch::locator=submission-8873a8d69876fe74%40workspace%3A.":
+  version: 1.0.0-beta.26
+  resolution: "rescript-relay@patch:rescript-relay@npm%3A1.0.0-beta.26#.yarn/patches/rescript-relay-npm-1.0.0-beta.26-4f125dc546.patch::version=1.0.0-beta.26&hash=d05b6f&locator=submission-8873a8d69876fe74%40workspace%3A."
+  dependencies:
+    detect-libc: ^2.0.1
+  peerDependencies:
+    "@rescript/react": "*"
+    react-relay: ">=11.0.0"
+    relay-runtime: "*"
+    rescript: ^9.1.2
+  bin:
+    rescript-relay-cli: cli/cli.js
+    rescript-relay-compiler: compiler.js
+  checksum: ffcd8a408d7de3ce08dd4f12879f04a8d75f20e1b3e86ead71d4eebaecba3a9b2e2f34894a76eb0b75aaeafc0ed776132acd4a40312f8f547b409c0d05cdbd19
+  languageName: node
+  linkType: hard
+
+"rescript-webapi@npm:^0.6.1":
+  version: 0.6.1
+  resolution: "rescript-webapi@npm:0.6.1"
+  checksum: eae937583eaa2c2df8c7befc4a0251681beff670618adf8671a99e22e3a0edf44ec407835feba2310bbd84d841f6336a93421f258f8c5e4549b01ba0d75d470a
+  languageName: node
+  linkType: hard
+
 "rescript@npm:^9.1.4":
   version: 9.1.4
   resolution: "rescript@npm:9.1.4"
@@ -3582,6 +3613,7 @@ __metadata:
   dependencies:
     "@iconify-json/bi": ^1.1.6
     "@rescript/react": ^0.10.3
+    "@ryyppy/rescript-promise": ^2.1.0
     "@unocss/reset": ^0.45.8
     "@unocss/webpack": ^0.45.8
     eslint: 8.22.0
@@ -3593,6 +3625,7 @@ __metadata:
     relay-runtime: ^14.1.0
     rescript: ^9.1.4
     rescript-relay: 1.0.0-beta.26
+    rescript-webapi: ^0.6.1
     unocss: ^0.45.8
   languageName: unknown
   linkType: soft

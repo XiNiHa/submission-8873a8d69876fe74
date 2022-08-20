@@ -3,16 +3,16 @@
   "namespace": false,
   "reason": { "react-jsx": 3 },
   "refmt": 3,
-  "bs-dependencies": ["@rescript/react", "rescript-relay"],
+  "bs-dependencies": ["@rescript/react", "rescript-relay", "rescript-webapi", "@ryyppy/rescript-promise"],
   "ppx-flags": ["rescript-relay/ppx"],
   "sources": [
     { "dir": "src", "subdirs": true }
   ],
   "package-specs": {
-    "module": "es6",
+    "module": "commonjs",
     "in-source": true
   },
-  "suffix": ".mjs",
+  "suffix": ".cjs",
   "warnings": {
     "number": "-3",
     "error": "+101+8"

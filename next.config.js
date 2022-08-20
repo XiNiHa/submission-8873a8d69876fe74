@@ -5,16 +5,26 @@ const { presetUno, presetIcons } = require("unocss");
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  webpack: (config) => ({
-    ...config,
-    plugins: [
-      ...config?.plugins,
-      UnoCSS({
-        include: ["src/**/*.mjs"],
-        presets: [presetUno(), presetIcons()],
-      }),
-    ],
-  }),
+  webpack: (config, options) => {
+    config.plugins.push(
+        UnoCSS({
+          include: ["src/**/*.cjs"],
+          presets: [presetUno(), presetIcons()],
+        })
+      );
+
+    config.module.rules.push({
+      test: /\.(c|m)?js$/,
+      use: options.defaultLoaders.babel,
+      exclude: /node_modules/,
+      type: "javascript/auto",
+      resolve: {
+        fullySpecified: false,
+      },
+    })
+
+    return config
+  },
 };
 
 module.exports = nextConfig;

@@ -1,0 +1,48 @@
+diff --git a/postinstall.js b/postinstall.js
+index 78e757cbf22fd599e99307531fd1163c35da0528..507e2ef490cd2b5b492a83db9397de898213b95d 100644
+--- a/postinstall.js
++++ b/postinstall.js
+@@ -97,25 +97,29 @@ function copyPlatformBinaries(platform) {
+   /**
+    * Copy the PPX
+    */
+-  fs.copyFileSync(
+-    path.join(__dirname, "ppx-" + platform),
+-    path.join(__dirname, "ppx")
+-  );
+-  fs.chmodSync(path.join(__dirname, "ppx"), 0777);
++  if (!fs.existsSync(path.join(__dirname, "ppx"))) {
++    fs.copyFileSync(
++      path.join(__dirname, "ppx-" + platform),
++      path.join(__dirname, "ppx")
++    );
++    fs.chmodSync(path.join(__dirname, "ppx"), 0777);
++  }
+ 
+   /**
+    * Copy the Relay compiler
+    */
+ 
+-  fs.copyFileSync(
+-    path.join(
+-      __dirname,
+-      "relay-compiler-" + getRelayCompilerPlatformSuffix(),
+-      "relay"
+-    ),
+-    path.join(__dirname, "rescript-relay-compiler.exe")
+-  );
+-  fs.chmodSync(path.join(__dirname, "rescript-relay-compiler.exe"), 0777);
++  if (!fs.existsSync(path.join(__dirname, "rescript-relay-compiler.exe"))) {
++    fs.copyFileSync(
++      path.join(
++        __dirname,
++        "relay-compiler-" + getRelayCompilerPlatformSuffix(),
++        "relay"
++      ),
++      path.join(__dirname, "rescript-relay-compiler.exe")
++    );
++    fs.chmodSync(path.join(__dirname, "rescript-relay-compiler.exe"), 0777);
++  }
+ }
+ 
+ function removeInitialBinaries() {

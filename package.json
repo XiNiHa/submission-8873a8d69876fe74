@@ -16,11 +16,13 @@
     "react-dom": "18.2.0",
     "react-relay": "^14.1.0",
     "relay-runtime": "^14.1.0",
-    "rescript-relay": "1.0.0-beta.26"
+    "rescript-relay": "1.0.0-beta.26",
+    "rescript-webapi": "^0.6.1"
   },
   "devDependencies": {
     "@iconify-json/bi": "^1.1.6",
     "@rescript/react": "^0.10.3",
+    "@ryyppy/rescript-promise": "^2.1.0",
     "@unocss/reset": "^0.45.8",
     "@unocss/webpack": "^0.45.8",
     "eslint": "8.22.0",
@@ -28,5 +30,8 @@
     "rescript": "^9.1.4",
     "unocss": "^0.45.8"
   },
-  "packageManager": "yarn@3.2.2"
+  "packageManager": "yarn@3.2.2",
+  "resolutions": {
+    "rescript-relay@1.0.0-beta.26": "patch:rescript-relay@npm:1.0.0-beta.26#.yarn/patches/rescript-relay-npm-1.0.0-beta.26-4f125dc546.patch"
+  }
 }
