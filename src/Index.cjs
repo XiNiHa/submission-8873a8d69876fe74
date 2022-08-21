@@ -3,6 +3,7 @@
 
 var Curry = require("rescript/lib/js/curry.js");
 var React = require("react");
+var SearchView = require("./components/SearchView.cjs");
 var Caml_option = require("rescript/lib/js/caml_option.js");
 var ReactRelay = require("react-relay");
 var RescriptRelay = require("rescript-relay/src/RescriptRelay.cjs");
@@ -90,12 +91,51 @@ var Query = {
 };
 
 function Index(Props) {
-  var data = use(undefined, undefined, undefined, undefined, undefined);
+  var match = React.useState(function () {
+        return "";
+      });
+  var setQuery = match[1];
+  var query = match[0];
+  var match$1 = React.useState(function () {
+        return true;
+      });
+  var setInputDisabled = match$1[1];
+  var data = use({
+        query: query,
+        queryNotBlank: query.length > 0
+      }, undefined, undefined, undefined, undefined);
+  React.useEffect((function () {
+          Curry._1(setInputDisabled, (function (param) {
+                  return false;
+                }));
+          
+        }), []);
   return React.createElement("div", {
-              className: "flex h-20 justify-center items-center text-2xl"
+              className: "flex flex-col gap-4 h-full justify-center items-center"
             }, React.createElement("div", {
-                  className: "i-bi-star"
-                }), data.viewer.login);
+                  className: "i-bi-github"
+                }), React.createElement("span", {
+                  className: "text-2xl"
+                }, "Logged in as " + data.viewer.login), React.createElement("input", {
+                  className: "rounded border border-gray-500 px-4 py-2 w-64",
+                  disabled: match$1[0],
+                  type: "text",
+                  value: query,
+                  onChange: (function (e) {
+                      return Curry._1(setQuery, (function (param) {
+                                    return e.target.value;
+                                  }));
+                    })
+                }), React.createElement("div", {
+                  className: "flex-1 flex flex-col justify-center items-stretch self-stretch max-h-[50vh] mx-4 p-2 rounded border border-gray-300"
+                }, React.createElement(React.Suspense, {
+                      children: React.createElement(SearchView.make, {
+                            fragmentRef: data.fragmentRefs
+                          }),
+                      fallback: React.createElement("div", {
+                            className: "text-center"
+                          }, "Loading...")
+                    })));
 }
 
 var make = Index;
