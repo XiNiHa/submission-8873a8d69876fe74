@@ -3218,7 +3218,7 @@ __metadata:
 
 "rescript-relay@patch:rescript-relay@npm:1.0.0-beta.26#.yarn/patches/rescript-relay-npm-1.0.0-beta.26-4f125dc546.patch::locator=submission-8873a8d69876fe74%40workspace%3A.":
   version: 1.0.0-beta.26
-  resolution: "rescript-relay@patch:rescript-relay@npm%3A1.0.0-beta.26#.yarn/patches/rescript-relay-npm-1.0.0-beta.26-4f125dc546.patch::version=1.0.0-beta.26&hash=d05b6f&locator=submission-8873a8d69876fe74%40workspace%3A."
+  resolution: "rescript-relay@patch:rescript-relay@npm%3A1.0.0-beta.26#.yarn/patches/rescript-relay-npm-1.0.0-beta.26-4f125dc546.patch::version=1.0.0-beta.26&hash=01c2ae&locator=submission-8873a8d69876fe74%40workspace%3A."
   dependencies:
     detect-libc: ^2.0.1
   peerDependencies:
@@ -3229,7 +3229,7 @@ __metadata:
   bin:
     rescript-relay-cli: cli/cli.js
     rescript-relay-compiler: compiler.js
-  checksum: ffcd8a408d7de3ce08dd4f12879f04a8d75f20e1b3e86ead71d4eebaecba3a9b2e2f34894a76eb0b75aaeafc0ed776132acd4a40312f8f547b409c0d05cdbd19
+  checksum: 4815874a6754de3dbcd4fde0b7b7b4c9e20b4c1c638f28ad2616e8192dac17e88a84b13361c02df58655b8baed24a7104515348aaf48b7002c29b4142af63d4a
   languageName: node
   linkType: hard
 

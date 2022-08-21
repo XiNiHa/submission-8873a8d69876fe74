@@ -1,48 +1,25 @@
 diff --git a/postinstall.js b/postinstall.js
-index 78e757cbf22fd599e99307531fd1163c35da0528..507e2ef490cd2b5b492a83db9397de898213b95d 100644
+index 78e757cbf22fd599e99307531fd1163c35da0528..3e1ada9b88e748934b69868ca242a0edae834470 100644
 --- a/postinstall.js
 +++ b/postinstall.js
-@@ -97,25 +97,29 @@ function copyPlatformBinaries(platform) {
+@@ -97,6 +97,9 @@ function copyPlatformBinaries(platform) {
    /**
     * Copy the PPX
     */
--  fs.copyFileSync(
--    path.join(__dirname, "ppx-" + platform),
--    path.join(__dirname, "ppx")
--  );
--  fs.chmodSync(path.join(__dirname, "ppx"), 0777);
-+  if (!fs.existsSync(path.join(__dirname, "ppx"))) {
-+    fs.copyFileSync(
-+      path.join(__dirname, "ppx-" + platform),
-+      path.join(__dirname, "ppx")
-+    );
-+    fs.chmodSync(path.join(__dirname, "ppx"), 0777);
++  if (fs.existsSync(path.join(__dirname, "ppx"))) {
++    fs.rmSync(path.join(__dirname, "ppx"));
 +  }
- 
+   fs.copyFileSync(
+     path.join(__dirname, "ppx-" + platform),
+     path.join(__dirname, "ppx")
+@@ -106,7 +109,9 @@ function copyPlatformBinaries(platform) {
    /**
     * Copy the Relay compiler
     */
- 
--  fs.copyFileSync(
--    path.join(
--      __dirname,
--      "relay-compiler-" + getRelayCompilerPlatformSuffix(),
--      "relay"
--    ),
--    path.join(__dirname, "rescript-relay-compiler.exe")
--  );
--  fs.chmodSync(path.join(__dirname, "rescript-relay-compiler.exe"), 0777);
-+  if (!fs.existsSync(path.join(__dirname, "rescript-relay-compiler.exe"))) {
-+    fs.copyFileSync(
-+      path.join(
-+        __dirname,
-+        "relay-compiler-" + getRelayCompilerPlatformSuffix(),
-+        "relay"
-+      ),
-+      path.join(__dirname, "rescript-relay-compiler.exe")
-+    );
-+    fs.chmodSync(path.join(__dirname, "rescript-relay-compiler.exe"), 0777);
+-
++  if (fs.existsSync(path.join(__dirname, "rescript-relay-compiler.exe"))) {
++    fs.rmSync(path.join(__dirname, "rescript-relay-compiler.exe"));
 +  }
- }
- 
- function removeInitialBinaries() {
+   fs.copyFileSync(
+     path.join(
+       __dirname,
